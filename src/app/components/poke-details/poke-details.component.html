@@ -1,0 +1,8 @@
+<ng-container *ngIf="pokemon | async as p">
+  <div>
+    <img [src]="p.sprites?.front_default" />
+    <img [src]="p.sprites?.back_default" />
+  </div>
+
+  {{ p.name }}
+</ng-container>

@@ -1,0 +1,13 @@
+<input [(ngModel)]="query" (ngModelChange)="findPokemonByName()" />
+
+<hr />
+
+query: {{ query }}
+
+<hr />
+
+<ng-container *ngIf="pokemon | async as p">
+  <img [src]="p | pokeImage" />
+
+  <pre>{{ p | json }}</pre>
+</ng-container>
