@@ -1,0 +1,6 @@
+<poke-card
+  *ngFor="let pokemon of pokemonList | async"
+  [pokemonName]="pokemon.name"
+  class="clickable"
+  routerLink="/pokemon/{{ pokemon.name }}"
+></poke-card>

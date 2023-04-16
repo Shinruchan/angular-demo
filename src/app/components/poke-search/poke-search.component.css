@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 1rem;
+}
+
+input {
+  padding: 1rem;
+}
+
+pre {
+  width: 400px;
+}
