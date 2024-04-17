@@ -1,6 +1,19 @@
+@if(pokemon){
 <img
-  [src]="pokemon?.sprites?.other?.showdown?.front_default"
+  [src]="pokemon.sprites.other.showdown.front_default"
   (click)="onImageClick()"
 />
 
-{{ pokemon?.name }}
+{{ pokemon.name }}
+
+<div class="abilities">
+  @for (ability of pokemon.abilities; track $index) {
+  <div>{{ ability.ability.name }}</div>
+  }
+</div>
+
+} @else {
+<img
+  src="https://24.media.tumblr.com/2980aff6917398465169d89c89daf4a4/tumblr_mt166vEE9E1sgqvzxo1_500.gif"
+/>
+}

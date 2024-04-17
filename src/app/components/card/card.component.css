@@ -7,3 +7,9 @@
   gap: 1rem;
   text-align: center;
 }
+
+.abilities {
+  background: #444;
+  display: flex;
+  gap: 1rem;
+}
