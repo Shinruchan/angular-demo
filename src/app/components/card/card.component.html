@@ -4,11 +4,11 @@
   (click)="onImageClick()"
 />
 
-{{ pokemon.name }}
+{{ pokemon.name | titlecase }}
 
 <div class="abilities">
   @for (ability of pokemon.abilities; track $index) {
-  <div>{{ ability.ability.name }}</div>
+  <div>{{ ability.ability.name | kebabToHuman | titlecase }}</div>
   }
 </div>
 

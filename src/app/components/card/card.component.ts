@@ -1,12 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../../services/api.service';
+import { TitleCasePipe } from '@angular/common';
+import { KebabToHumanPipe } from '../../kebab-to-human.pipe';
 
 @Component({
   selector: 'card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
   standalone: true,
-  imports: [],
+  imports: [TitleCasePipe, KebabToHumanPipe],
 })
 export class CardComponent {
   @Input() pokemon?: Pokemon | null;
