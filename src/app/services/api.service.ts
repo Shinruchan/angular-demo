@@ -30,4 +30,10 @@ export class ApiService {
       `https://pokeapi.co/api/v2/pokemon/${Math.round(Math.random() * 251)}`
     );
   }
+
+  getPokemon(name: string) {
+    return this.httpClient.get<Pokemon>(
+      `https://pokeapi.co/api/v2/pokemon/${encodeURI(name)}`
+    );
+  }
 }
