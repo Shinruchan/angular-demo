@@ -1,16 +1,25 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ApiService } from '../services/api.service';
+import { ApiService, Pokemon } from '../services/api.service';
+import { CardComponent } from '../components/card/card.component';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'list-view',
   templateUrl: './list.component.html',
   standalone: true,
-  imports: [],
+  imports: [CardComponent, AsyncPipe],
 })
 export class ListComponent implements OnInit {
   private api = inject(ApiService);
 
+  pokemon$?: Observable<Pokemon>;
+
   ngOnInit(): void {
-    this.api.getRandomPokemon().subscribe(console.log);
+    this.pokemon$ = this.api.getRandomPokemon();
+  }
+
+  refreshPokemon() {
+    this.pokemon$ = this.api.getRandomPokemon();
   }
 }
